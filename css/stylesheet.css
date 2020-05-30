@@ -23,6 +23,16 @@ main {
     z-index: -1;
 }
 
+.card.small {
+    width: 30%;
+    height: 30%;
+    margin: 1.2rem;
+}
+
+.flexbox {
+    display: flex;
+}
+
   
 /*           COLOURS           */
 .nav-wrapper, .page-footer{
@@ -48,9 +58,10 @@ img {
 }
 
 #logo {
-    width: 3rem;
+    width: 3.5rem;
     margin: 0.5rem;
 }
+
 
 /*           TYPOGRAPHY           */
 body, nav ul a, .side-nav li>a {
