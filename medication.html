@@ -42,9 +42,52 @@
 
     <main>
       <div class="fixed-action-btn">
-        <a class="btn-floating btn-large">
+        <a class="btn-floating btn-large pulse">
           <i class="large material-icons">format_size</i>
         </a>
+      </div>
+
+      <div id="med-buttons">
+        <a id="dark-green" class="btn-floating btn-large waves-effect waves-light"><i class="material-icons">add</i></a>
+        <a id="light-green" class="btn-floating btn-large waves-effect waves-light"><i class="material-icons">remove</i></a>
+        <a id="yellow-green" class="btn-floating btn-large waves-effect waves-light"><i class="material-icons">lock_outline</i></a>
+        <a id="yellow" class="btn-floating btn-large waves-effect waves-light"><i class="material-icons">lock_open</i></a>
+        <a id="blue" class="btn-floating btn-large waves-effect waves-light"><i class="material-icons">low_priority</i></a>
+        <a id="dark-green" class="btn-floating btn-large waves-effect waves-light btn modal-trigger" href="#modal1"><i class="material-icons">mode_edit</i></a>
+    </div>
+
+    <ul class="collapsible popout">
+      <li>
+        <div class="collapsible-header"><i class="material-icons">zoom_in</i>First</div>
+        <div class="collapsible-body"><span>Take daily with water<br>No solids 20 minutes afterwards</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header"><i class="material-icons">star_border</i>Second</div>
+        <div class="collapsible-body"><span>Important<br>For diabetes<br>Take daily with water<br>No solids 20 minutes afterwards</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header"><i class="material-icons">zoom_in</i>Third</div>
+        <div class="collapsible-body"><span>Take when needed</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header"><i class="material-icons">zoom_in</i>Fourth</div>
+        <div class="collapsible-body"><span>Take when needed</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header"><i class="material-icons">timelapse</i>Fifth</div>
+        <div class="collapsible-body"><span>Take before bed<br>Two weeks duration<br>3 days remaining</span></div>
+      </li>
+    </ul>
+
+      <!-- MODAL -->
+      <div id="modal1" class="modal modal-fixed-footer">
+        <div class="modal-content">
+          <h4>Modal Header</h4>
+          <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
       </div>
     </main>
 
@@ -85,9 +128,10 @@
                            openElementId: "#shielded-logo"
                        });
                        frameName.init();
+
+                       $('.modal').modal();
                    }
                })();
            </script>
     </body>
   </html>
-        
