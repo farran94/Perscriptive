@@ -1,3 +1,13 @@
+/*
+#5AA7A7  - Dark Green
+#96D7C6  - Light Green
+#BAC94A  - Yellow Green
+#E2D36B  - Yellow
+#6C8CBF  - Blue
+*/
+
+
+
 /*           DISPLAY           */
 body {
     display: flex;
@@ -13,23 +23,36 @@ main {
     z-index: -1;
 }
 
-
-     
   
 /*           COLOURS           */
-/*
-#5AA7A7  - Dark Green
-#96D7C6  - Light Green
-#BAC94A  - Yellow Green
-#E2D36B  - Yellow
-#6C8CBF  - Blue
-*/
 .nav-wrapper, .page-footer{
     background-color: #5AA7A7;
 }
+
+.btn-floating i {
+    color: black;
+}
+
+.btn-floating {
+    background-color: #BAC94A;
+}
+
 
 .material-icons.dark_green { color: #5AA7A7; }
 .material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
 .material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
 
 /*           IMAGES           */
+img {
+    width: auto;
+}
+
+#logo {
+    width: 3rem;
+    margin: 0.5rem;
+}
+
+/*           TYPOGRAPHY           */
+body, nav ul a, .side-nav li>a {
+    font-size: 1.2rem;
+}
