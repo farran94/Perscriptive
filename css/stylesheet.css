@@ -140,6 +140,21 @@ main {
  background-color: #96D7C6;
 }
 
+.card-assist-link {
+    color: #6C8CBF !important;
+}
+
+.important-text {
+    color: red !important;
+    margin-right: 24px;
+    transition: color .3s ease;
+    text-transform: uppercase;
+}
+
+i.icon-white {
+    color: white;
+}
+
 
 
 
