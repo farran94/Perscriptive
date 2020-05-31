@@ -136,7 +136,7 @@ main {
     color: #5AA7A7; 
 }
 
-#log-in {
+.green-background {
  background-color: #96D7C6;
 }
 
@@ -216,5 +216,10 @@ body, nav ul a, .side-nav li>a {
 @media only screen and (min-width: 1200px) {
     .flexbox {
         flex-wrap: nowrap;
+    }
+
+    #assistance-cards {
+        margin-left: 4rem;
+        margin-right: 4rem;
     }
 }
