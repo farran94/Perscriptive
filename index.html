@@ -12,9 +12,10 @@
       <title>Perscriptive</title>
       <link rel="icon" type="image/png" href="img/perscriptive_logo.png">
       <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+      <script src="js/materialize.js"></script>
     </head>
 
-    <body>
+    <body id="log-in">
 
     <!-- MOBILE COLLAPSE -->
     <nav>
@@ -22,30 +23,77 @@
         <a href="home.html" class="brand-logo"><img id="logo" src="img/perscriptive_logo.png" alt="Perscriptive Logo Image"></a>
         <a href="home.html" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li class = "active"><a href="home.html"><i class="material-icons left">home</i>Home</a></li>
-          <li><a href="about.html"><i class="material-icons left">import_contacts</i>About</a></li>
-          <li><a href="medication.html"><i class="material-icons left">favorite_border</i>My Medications</a></li>
-          <li><a href="pharmacy.html"><i class="material-icons left">healing</i>My Pharmacy</a></li>
-          <li><a href="assist.html"><i class="material-icons left">call</i>Need Assistance?</a></li>
-          <li><a href="index.html"><i class="material-icons left">person</i>Log Out</a></li>
+          <li class = "active"><a onclick="Materialize.toast('Please Log In', 4000)" class="btn-flt"><i class="material-icons left">home</i>Home</a></li>
+          <li><a onclick="Materialize.toast('Please Log In', 4000)" class="btn-flt"><i class="material-icons left">import_contacts</i>About</a></li>
+          <li><a onclick="Materialize.toast('Please Log In', 4000)" class="btn-flt"><i class="material-icons left">favorite_border</i>My Medications</a></li>
+          <li><a onclick="Materialize.toast('Please Log In', 4000)" class="btn-flt"><i class="material-icons left">healing</i>My Pharmacy</a></li>
+          <li><a onclick="Materialize.toast('Please Log In', 4000)" class="btn-flt"><i class="material-icons left">call</i>Need Assistance?</a></li>
+          <li><a href="index.html"><i class="material-icons left">person</i>Log In</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-          <li class = "active"><a href="home.html"><i class="material-icons left">home</i>Home</a></li>
-          <li><a href="about.html"><i class="material-icons left">import_contacts</i>About</a></li>
-          <li><a href="medication.html"><i class="material-icons left">favorite_border</i>My Medications</a></li>
-          <li><a href="pharmacy.html"><i class="material-icons left">healing</i>My Pharmacy</a></li>
-          <li><a href="assist.html"><i class="material-icons left">call</i>Need Assistance?</a></li>
-          <li><a href="index.html"><i class="material-icons left">person</i>Log Out</a></li>
+          <li class = "active"><a onclick="Materialize.toast('Please Log In', 4000)" class="btn-flt"><i class="material-icons left">home</i>Home</a></li>
+          <li><a onclick="Materialize.toast('Please Log In', 4000)" class="btn-flt"><i class="material-icons left">import_contacts</i>About</a></li>
+          <li><a onclick="Materialize.toast('Please Log In', 4000)" class="btn-flt"><i class="material-icons left">favorite_border</i>My Medications</a></li>
+          <li><a onclick="Materialize.toast('Please Log In', 4000)" class="btn-flt"><i class="material-icons left">healing</i>My Pharmacy</a></li>
+          <li><a onclick="Materialize.toast('Please Log In', 4000)" class="btn-flt"><i class="material-icons left">call</i>Need Assistance?</a></li>
+          <li><a href="index.html"><i class="material-icons left">person</i>Log In</a></li>
         </ul>
       </div>
     </nav>
 
     <main>
       <div class="fixed-action-btn">
-        <a class="btn-floating btn-large">
+        <a class="btn-floating btn-large pulse">
           <i class="large material-icons">format_size</i>
         </a>
       </div>
+
+      <!-- LOGIN FORM -->
+      <div class="section"></div>
+      <main>
+        <div class="center">
+          <img class="responsive-img" style="width:12rem;" src="img/perscriptive_logo.png" />
+
+          <div class="container">
+            <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+    
+              <form class="col s12" method="post">
+                <div class='row'>
+                  <div class='col s12'>
+                  </div>
+                </div>
+    
+                <div class='row'>
+                  <div class='input-field col s12'>
+                    <input class='validate' type='email' name='email' id='email' />
+                    <label for='email'>Enter your email</label>
+                  </div>
+                </div>
+    
+                <div class='row'>
+                  <div class='input-field col s12'>
+                    <input class='validate' type='password' name='password' id='password' />
+                    <label for='password'>Enter your password</label>
+                  </div>
+                  <label style='float: right;'>
+                    <a class='pink-text' href='home.html'><b>Forgot Password?</b></a>
+                  </label>
+                </div>
+    
+
+                <div class="center">
+                  <div class='row'>
+                    <a href='home.html' id="blue" name='btn_login' class='col s12 btn btn-large waves-effect'>Login</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <a href="home.html" class='pink-text'>Create account</a>
+        </div>
+    
+        <div class="section"></div>
+        <div class="section"></div>
     </main>
 
     <!-- STICKY FOOTER -->
@@ -70,24 +118,9 @@
     </footer>
 
       <!--Import jQuery before materialize.js-->
-      
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-
-       <script>
-          $(".button-collapse").sideNav();
-       </script>
-           <script src="https://staticcdn.co.nz/embed/embed.js"></script>
-           <script>
-               (function () {
-                   window.onload = function(){
-                       var frameName = new ds07o6pcmkorn({
-                           openElementId: "#shielded-logo"
-                       });
-                       frameName.init();
-                   }
-               })();
-           </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+      <script src="https://staticcdn.co.nz/embed/embed.js"></script>
     </body>
   </html>
         
