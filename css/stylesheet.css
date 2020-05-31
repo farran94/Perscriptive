@@ -136,8 +136,23 @@ main {
     color: #5AA7A7; 
 }
 
-#log-in {
+.green-background {
  background-color: #96D7C6;
+}
+
+.card-assist-link {
+    color: #6C8CBF !important;
+}
+
+.important-text {
+    color: red !important;
+    margin-right: 24px;
+    transition: color .3s ease;
+    text-transform: uppercase;
+}
+
+i.icon-white {
+    color: white;
 }
 
 
@@ -201,5 +216,10 @@ body, nav ul a, .side-nav li>a {
 @media only screen and (min-width: 1200px) {
     .flexbox {
         flex-wrap: nowrap;
+    }
+
+    #assistance-cards {
+        margin-left: 5rem;
+        margin-right: 5rem;
     }
 }
