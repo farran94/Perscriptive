@@ -50,6 +50,10 @@ main {
   box-shadow: none;
 }
 
+.collection {
+    width: 80%;
+    margin: 1rem;
+}
 
 
 
