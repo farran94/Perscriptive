@@ -35,12 +35,32 @@ main {
     margin: 1rem;
 }
 
+.input-field input[type=date]:focus + label,
+.input-field input[type=text]:focus + label,
+.input-field input[type=email]:focus + label,
+.input-field input[type=password]:focus + label {
+  color: #BAC94A;
+}
+
+.input-field input[type=date]:focus,
+.input-field input[type=text]:focus,
+.input-field input[type=email]:focus,
+.input-field input[type=password]:focus {
+  border-bottom: 2px solid #BAC94A;
+  box-shadow: none;
+}
 
 
-  
-/*           COLOURS           */
-.nav-wrapper, .page-footer{
-    background-color: #5AA7A7;
+
+
+
+/*           BUTTONS          */
+.btn-floating.btn-large.waves-effect.waves-light {
+    margin: 0.75rem;
+}
+
+#med-buttons {
+    margin-left: 2rem;
 }
 
 .btn-floating i {
@@ -49,6 +69,58 @@ main {
 
 .btn-floating {
     background-color: #BAC94A;
+}
+
+#dark-green {
+    background-color: #5AA7A7;
+}
+
+#light-green {
+    background-color: #96D7C6;
+}
+
+#yellow-green {
+    background-color: #BAC94A;
+}
+
+#yellow {
+    background-color: #E2D36B;
+}
+
+#blue {
+    background-color: #6C8CBF;
+}
+
+#dark-green:hover {
+    background-color: #E2D36B;
+}
+
+#light-green:hover {
+    background-color: #E2D36B;
+}
+
+#yellow-green:hover {
+    background-color: #6C8CBF;
+}
+
+#yellow:hover {
+    background-color: #6C8CBF;
+}
+
+#blue:hover {
+    background-color: #E2D36B;
+}
+
+
+
+
+
+
+
+  
+/*           COLOURS           */
+.nav-wrapper, .page-footer{
+    background-color: #5AA7A7;
 }
 
 .progress {
@@ -64,6 +136,12 @@ main {
     color: #5AA7A7; 
 }
 
+#log-in {
+ background-color: #96D7C6;
+}
+
+
+
 
 /*           IMAGES           */
 #logo {
@@ -76,16 +154,28 @@ main {
 }
 
 
+
+
+
 /*           TYPOGRAPHY           */
 body, nav ul a, .side-nav li>a {
     font-size: 1.2rem;
 }
 
+.center {
+    text-align: center;
+}
 
-/*           ANIMCATIONS          */
+
+
+
+/*           ANIMATIONS          */
 .pulse::before {
     animation: pulse-animation 20s cubic-bezier(0.24, 0, 0.38, 1) infinite;
 }
+
+
+
 
 
 /*           MEDIA BREAKS          */
@@ -113,6 +203,3 @@ body, nav ul a, .side-nav li>a {
         flex-wrap: nowrap;
     }
 }
-
-
-
