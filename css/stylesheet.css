@@ -55,6 +55,9 @@ main {
     margin: 1rem;
 }
 
+.hidden-item {
+    display: none;
+}
 
 
 
