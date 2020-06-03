@@ -6,7 +6,7 @@
         frameName.init();
 
         M.AutoInit();
-        
+
         //Init modal
         $('.modal').modal();
 
@@ -21,3 +21,9 @@
 document.getElementById("loginButton").onclick = function () {
     location.href = "home.html";
 };
+
+jQuery(document).ready(function(){
+    jQuery('.timepicker').timepicker({
+      twelveHour: false
+    });
+  });
