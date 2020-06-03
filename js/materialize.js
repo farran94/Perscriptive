@@ -6,9 +6,16 @@ let LargerText
         });
         frameName.init();
 
+        M.AutoInit();
+
+        //Init modal
         $('.modal').modal();
 
+        //Init sidenav
         $(".button-collapse").sideNav();
+
+        //Init drop-down forms
+        $('select').formSelect();
     }
 })();
 
@@ -21,3 +28,9 @@ document.getElementById("biggerButton").onclick = function(){
 		LargerText = false;
 	}		
 };
+
+jQuery(document).ready(function(){
+    jQuery('.timepicker').timepicker({
+      twelveHour: false
+    });
+  });
