@@ -27,7 +27,7 @@ main {
     display: flex;
 }
 
-.card {
+.card, #checks {
     margin: 1rem;
 }
 
