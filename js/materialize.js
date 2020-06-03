@@ -5,9 +5,16 @@
         });
         frameName.init();
 
+        M.AutoInit();
+        
+        //Init modal
         $('.modal').modal();
 
+        //Init sidenav
         $(".button-collapse").sideNav();
+
+        //Init drop-down forms
+        $('select').formSelect();
     }
 })();
 
