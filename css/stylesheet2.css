@@ -27,7 +27,7 @@ main {
     display: flex;
 }
 
-.card, #checks {
+.card {
     margin: 1rem;
 }
 
@@ -55,11 +55,9 @@ main {
     margin: 1rem;
 }
 
-#border {
-    padding: 0.5rem;
-    border: 1px solid #96D7C6 ;
+.hidden-item {
+    display: none;
 }
-
 
 
 

@@ -56,10 +56,17 @@ class MedicineList { // eslint-disable-line no-unused-vars
 		if (!pageId) { return }
 
 		// Hiding all pages
-		var pages = ["login", "home-page", "about-page", "my-medication", "my-pharmacy", "need-assistance"]
+		var pages = ["login", "home-page", "about-page", "my-medication", "my-pharmacy", "need-assistance", "notification-page"]
 		pages.forEach(function(page) {
 			document.getElementById(page).style.display = "none"
 		})
+
+		// Setting nav bar as active
+		var pages = ["home-page-nav", "about-page-nav", "my-medication-nav", "my-pharmacy-nav", "need-assistance-nav", "notification-page-nav"]
+		pages.forEach(function(page) {
+			document.getElementById(page).classList.remove("active")
+		})
+
 
 		// Making current page visable
 		document.getElementById(pageId).style.display = "inline"
@@ -67,6 +74,9 @@ class MedicineList { // eslint-disable-line no-unused-vars
 			document.getElementById("hidden-nav").style.display = "none"
 		} else {
 			document.getElementById("hidden-nav").style.display = "inline"
+			// Marking nav as active
+			var activePage = pageId + "-nav"
+			document.getElementById(activePage).classList.add("active")
 		}
 
 		// Making background white

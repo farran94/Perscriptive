@@ -19,28 +19,30 @@
     <!-- MOBILE COLLAPSE -->
     <nav>
       <div class="nav-wrapper">
-        <a href="home.html" class="brand-logo"><img id="logo" src="img/perscriptive_logo.png" alt="Perscriptive Logo Image"></a>
-        <a href="home.html" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <a onClick="myMedicineList.hideAllButMe('home-page')" class="brand-logo"><img id="logo" src="img/perscriptive_logo.png" alt="Perscriptive Logo Image"></a>
+        <a onClick="myMedicineList.hideAllButMe('home-page')" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down hidden-item" id="hidden-nav">
-          <li class = "active" ><a onClick="myMedicineList.hideAllButMe('home-page')" class="btn-flt"><i class="material-icons left">home</i>Home</a></li>
-          <li><a onClick="myMedicineList.hideAllButMe('about-page')" class="btn-flt"><i class="material-icons left">import_contacts</i>About</a></li>
-          <li><a onClick="myMedicineList.hideAllButMe('my-medication')" class="btn-flt"><i class="material-icons left">favorite_border</i>My Medications</a></li>
-          <li><a onClick="myMedicineList.hideAllButMe('my-pharmacy')" class="btn-flt"><i class="material-icons left">healing</i>My Pharmacy</a></li>
-          <li><a onClick="myMedicineList.hideAllButMe('need-assistance')" class="btn-flt"><i class="material-icons left">call</i>Need Assistance?</a></li>
-          <li><a href="index.html"><i class="material-icons left">person</i>Log Out</a></li>
+          <li id="home-page-nav"><a onClick="myMedicineList.hideAllButMe('home-page')" class="btn-flt"><i class="material-icons left">home</i>Home</a></li>
+          <li id="about-page-nav"><a onClick="myMedicineList.hideAllButMe('about-page')" class="btn-flt"><i class="material-icons left">import_contacts</i>About</a></li>
+          <li id="my-medication-nav"><a onClick="myMedicineList.hideAllButMe('my-medication')" class="btn-flt"><i class="material-icons left">favorite_border</i>My Medications</a></li>
+		  <li id="my-pharmacy-nav"><a onClick="myMedicineList.hideAllButMe('my-pharmacy')" class="btn-flt"><i class="material-icons left">healing</i>My Pharmacy</a></li>
+		  <li id="notification-page-nav"><a onClick="myMedicineList.hideAllButMe('notification-page')" class="btn-flt"><i class="material-icons left">healing</i>Notifications</a></li>
+          <li id="need-assistance-nav"><a onClick="myMedicineList.hideAllButMe('need-assistance')" class="btn-flt"><i class="material-icons left">call</i>Need Assistance?</a></li>
+          <li ><a href="index.html"><i class="material-icons left">person</i>Log Out</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-          <li class = "active"><a onClick="myMedicineList.hideAllButMe('home-page')" class="btn-flt"><i class="material-icons left">home</i>Home</a></li>
-          <li><a onClick="myMedicineList.hideAllButMe('about-page')" class="btn-flt"><i class="material-icons left">import_contacts</i>About</a></li>
-          <li><a onClick="myMedicineList.hideAllButMe('my-medication')" class="btn-flt"><i class="material-icons left">favorite_border</i>My Medications</a></li>
-          <li><a onClick="myMedicineList.hideAllButMe('my-pharmacy')" class="btn-flt"><i class="material-icons left">healing</i>My Pharmacy</a></li>
-          <li><a onClick="myMedicineList.hideAllButMe('need-assistance')" class="btn-flt"><i class="material-icons left">call</i>Need Assistance?</a></li>
-          <li><a onClick="myMedicineList.hideAllButMe('login')"><i class="material-icons left">person</i>Log out</a></li>
+          <li id="home-page-nav"><a onClick="myMedicineList.hideAllButMe('home-page')" class="btn-flt"><i class="material-icons left">home</i>Home</a></li>
+          <li id="about-page-nav"><a onClick="myMedicineList.hideAllButMe('about-page')" class="btn-flt"><i class="material-icons left">import_contacts</i>About</a></li>
+          <li id="my-medication-nav"><a onClick="myMedicineList.hideAllButMe('my-medication')" class="btn-flt"><i class="material-icons left">favorite_border</i>My Medications</a></li>
+		  <li id="my-pharmacy-nav"><a onClick="myMedicineList.hideAllButMe('my-pharmacy')" class="btn-flt"><i class="material-icons left">healing</i>My Pharmacy</a></li>
+		  <li id="notification-page-nav"><a onClick="myMedicineList.hideAllButMe('notification-page')" class="btn-flt"><i class="material-icons left">healing</i>Notifications</a></li>
+          <li id="need-assistance-nav"><a onClick="myMedicineList.hideAllButMe('need-assistance')" class="btn-flt"><i class="material-icons left">call</i>Need Assistance?</a></li>
+          <li id=""><a onClick="myMedicineList.hideAllButMe('login')"><i class="material-icons left">person</i>Log out</a></li>
         </ul>
       </div>
     </nav>
 
-    <main>
+
 		<div class="fixed-action-btn">
 			<a class="btn-floating btn-large pulse">
 				<i class="large material-icons" id="biggerButton">format_size</i>
@@ -48,7 +50,6 @@
 		</div>
 
       <!-- LOGIN FORM -->
-		<div class="section"></div>
 		<div id="login">
 			<div class="center">
 			  <img class="responsive-img" style="width:12rem;" src="img/perscriptive_logo.png" />
@@ -88,13 +89,12 @@
 				  </form>
 				</div>
 			  </div>
-			  <a href='home.html' id="dark-green" class='col s12 btn btn-small waves-effect text-grey darken-3 font-change'>Create Account</a>
+			  <a onClick="myMedicineList.hideAllButMe('home-page')" id="dark-green" class='col s12 btn btn-small waves-effect text-grey darken-3 font-change'>Create Account</a>
 			</div>
 		</div>
-        <div class="section"></div>
 	
     <!-- Home -->	
-		<div id="home-page" class="hidden-item">
+		<div id="home-page" >
 		  <!-- CARDS -->
 		  <div id="main-card">
 			<div class="card-panel">
@@ -156,7 +156,7 @@
 
 	
     <!-- About -->	
-		<div id="about-page" class="hidden-item">
+		<div id="about-page" >
 		  <div class="fixed-action-btn">
 			<a class="btn-floating btn-large pulse">
 			  <i class="large material-icons" id="biggerButton">format_size</i>
@@ -225,7 +225,7 @@
 	
 
     <!-- My Medications -->
-		<div id="my-medication" class="hidden-item">
+		<div id="my-medication" >
 		  <div class="fixed-action-btn">
 			<a class="btn-floating btn-large pulse">
 			  <i class="large material-icons" id="biggerButton">format_size</i>
@@ -282,7 +282,7 @@
 
 
     <!-- My Pharmacy -->
-	<div id="my-pharmacy" class="hidden-item">
+	<div id="my-pharmacy" >
 		  <div class="fixed-action-btn">
 			<a class="btn-floating btn-large pulse">
 			  <i class="large material-icons" id="biggerButton">format_size</i>
@@ -342,7 +342,7 @@
 
 
     <!-- Need Assistance -->
-    <div id="need-assistance" class="hidden-item">
+    <div id="need-assistance" >
       <div class="fixed-action-btn">
         <a class="btn-floating btn-large pulse">
           <i class="large material-icons" id="biggerButton">format_size</i>
@@ -504,8 +504,78 @@
         </div> 
       </div>
 
-    </div>
-
+	</div>
+		<!-- Notifications page -->
+		<div id="notification-page">
+			<div class="fixed-action-btn">
+				<a class="btn-floating btn-large pulse">
+				  <i class="large material-icons">format_size</i>
+				</a>
+			  </div>
+			  
+			  <div id="checks">
+				<h2 class="grey-text">Notifications</h2>
+				<div id="border">
+					<p>
+						<input type="checkbox" id="test" />
+						<label class ="black-text" for="test">Recieve on Mobile</label>
+					</p>
+					<p>
+						<input type="checkbox" id="test1" />
+						<label class ="black-text" for="test1">Recieve on Desktop</label>
+					</p>  
+					<p>
+						<input type="checkbox" id="test2" />
+						<label class ="black-text" for="test2">Recieve Email</label>
+					</p>  
+					<p>
+						<input type="checkbox" id="test3" />
+						<label class ="black-text" for="test3">Recieve Mobile Call</label>
+					</p> 
+					<div class="row">
+						<div class="col s12 m6">
+						  <div class="card light-blue lighten-5">
+							<div class="card-content">
+							  <span class="card-title">Reminder</span>
+							  <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">error_outline</i></a>
+							  <p>You will recieve an alert in 10 days</p>
+							</div>
+						  </div>
+						</div>
+						<div class="col s12 m6"></div>
+					  </div>
+				</div>
+				<br>
+				<h5 class="grey-text">I am registered as:</h5>
+				<div id="border">
+						<input id="choice_1" name="group1" type="radio" checked/>   
+						<label class ="black-text" for="choice_1">Individual</label>
+						<br>
+						<input id="choice_2" name="group1" type="radio" />  
+						<label class ="black-text" for="choice_2">Partner/Spouse</label>
+						<br>
+						<input id="choice_3" name="group1" type="radio" />  
+						<label class ="black-text" for="choice_3">Family Member</label>
+						<br>
+						<input id="choice_4" name="group1" type="radio" />  
+						<label class ="black-text" for="choice_4">Friend</label>
+						<br>
+						<input id="choice_5" name="group1" type="radio" />  
+						<label class ="black-text" for="choice_5">Other</label>
+						<div class="row">
+							<div class="col s12">
+							  <div class="row">
+								<div class="input-field col s12">
+								  <i class="material-icons prefix">textsms</i>
+								  <input type="text" id="autocomplete-input" class="autocomplete">
+								  <label for="autocomplete-input">Please Specify...</label>
+								</div>
+							  </div>
+							</div>
+						  </div>
+					</div>
+			  </div> 
+		</div>
     </main>	
 	
     <!-- STICKY FOOTER -->
