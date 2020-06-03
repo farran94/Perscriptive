@@ -27,7 +27,7 @@ main {
     display: flex;
 }
 
-.card {
+.card, #checks {
     margin: 1rem;
 }
 
@@ -53,6 +53,11 @@ main {
 .collection {
     width: 80%;
     margin: 1rem;
+}
+
+#border {
+    padding: 0.5rem;
+    border: 1px solid #96D7C6 ;
 }
 
 

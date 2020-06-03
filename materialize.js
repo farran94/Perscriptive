@@ -5,8 +5,6 @@
         });
         frameName.init();
 
-        M.AutoInit();
-
         //Init modal
         $('.modal').modal();
 
