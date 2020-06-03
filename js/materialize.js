@@ -8,8 +8,6 @@
         $('.modal').modal();
 
         $(".button-collapse").sideNav();
-        
-         $('select').formSelect();
     }
 })();
 
