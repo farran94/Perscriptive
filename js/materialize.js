@@ -1,3 +1,4 @@
+let LargerText
 (function () {
     window.onload = function(){
         var frameName = new ds07o6pcmkorn({
@@ -18,8 +19,14 @@
     }
 })();
 
-document.getElementById("loginButton").onclick = function () {
-    location.href = "home.html";
+document.getElementById("biggerButton").onclick = function(){
+	if (LargerText === false) {
+		document.body.style.fontSize = "1.2rem";
+		LargerText = true;
+	} else {
+		document.body.style.fontSize = "2.4rem";
+		LargerText = false;
+	}		
 };
 
 jQuery(document).ready(function(){

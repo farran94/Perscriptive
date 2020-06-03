@@ -1,0 +1,232 @@
+/*
+#5AA7A7  - Dark Green
+#96D7C6  - Light Green
+#BAC94A  - Yellow Green
+#E2D36B  - Yellow
+#6C8CBF  - Blue
+*/
+
+
+
+/*           DISPLAY           */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+#sidenav-overlay {
+    z-index: -1;
+}
+
+.flexbox {
+    display: flex;
+}
+
+.card {
+    margin: 1rem;
+}
+
+#main-card {
+    margin: 1rem;
+}
+
+.input-field input[type=date]:focus + label,
+.input-field input[type=text]:focus + label,
+.input-field input[type=email]:focus + label,
+.input-field input[type=password]:focus + label {
+  color: #BAC94A;
+}
+
+.input-field input[type=date]:focus,
+.input-field input[type=text]:focus,
+.input-field input[type=email]:focus,
+.input-field input[type=password]:focus {
+  border-bottom: 2px solid #BAC94A;
+  box-shadow: none;
+}
+
+.collection {
+    width: 80%;
+    margin: 1rem;
+}
+
+.hidden-item {
+    display: none;
+}
+
+
+
+/*           BUTTONS          */
+.btn-floating.btn-large.waves-effect.waves-light {
+    margin: 0.75rem;
+}
+
+#med-buttons {
+    margin-left: 2rem;
+}
+
+.btn-floating i {
+    color: black;
+}
+
+.btn-floating {
+    background-color: #BAC94A;
+}
+
+#dark-green {
+    background-color: #5AA7A7;
+}
+
+#light-green {
+    background-color: #96D7C6;
+}
+
+#yellow-green {
+    background-color: #BAC94A;
+}
+
+#yellow {
+    background-color: #E2D36B;
+}
+
+#blue {
+    background-color: #6C8CBF;
+}
+
+#dark-green:hover {
+    background-color: #E2D36B;
+}
+
+#light-green:hover {
+    background-color: #E2D36B;
+}
+
+#yellow-green:hover {
+    background-color: #6C8CBF;
+}
+
+#yellow:hover {
+    background-color: #6C8CBF;
+}
+
+#blue:hover {
+    background-color: #E2D36B;
+}
+
+
+
+
+
+
+
+  
+/*           COLOURS           */
+.nav-wrapper, .page-footer{
+    background-color: #5AA7A7;
+}
+
+.progress {
+    height: 1rem;
+    background-color: #96D7C6;
+}
+
+.progress .determinate {
+    background-color: #6C8CBF;
+}
+
+.material-icons.dark_green { 
+    color: #5AA7A7; 
+}
+
+.green-background {
+ background-color: #96D7C6;
+}
+
+.card-assist-link {
+    color: #6C8CBF !important;
+}
+
+.important-text {
+    color: red !important;
+    margin-right: 24px;
+    transition: color .3s ease;
+    text-transform: uppercase;
+}
+
+i.icon-white {
+    color: white;
+}
+
+
+
+
+/*           IMAGES           */
+#logo {
+    width: 3.5rem;
+    margin: 0.5rem;
+}
+
+.card {
+    width: 33%;
+}
+
+
+
+
+
+/*           TYPOGRAPHY           */
+body, nav ul a, .side-nav li>a {
+    font-size: 1.2rem;
+}
+
+.center {
+    text-align: center;
+}
+
+
+
+
+/*           ANIMATIONS          */
+.pulse::before {
+    animation: pulse-animation 20s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
+
+
+
+
+
+/*           MEDIA BREAKS          */
+@media only screen and (min-width: 0px){
+    .flexbox {
+        flex-wrap: wrap;
+    }
+    .card {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 992px){
+    .flexbox {
+        flex-wrap: nowrap;
+    }
+
+    .card {
+        width: 33%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .flexbox {
+        flex-wrap: nowrap;
+    }
+
+    #assistance-cards {
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+}

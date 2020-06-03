@@ -12,7 +12,6 @@
       <title>Perscriptive</title>
       <link rel="icon" type="image/png" href="img/perscriptive_logo.png">
       <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-      <script src="js/materialize.js"></script>
     </head>
 
     <body class="green-background">
@@ -20,82 +19,565 @@
     <!-- MOBILE COLLAPSE -->
     <nav>
       <div class="nav-wrapper">
-        <a href="home.html" class="brand-logo"><img id="logo" src="img/perscriptive_logo.png" alt="Perscriptive Logo Image"></a>
-        <a href="home.html" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li class = "active"><a onclick="Materialize.toast('Please Log In', 4000)" class="btn-flt"><i class="material-icons left">home</i>Home</a></li>
-          <li><a onclick="Materialize.toast('Please Log In', 4000)" class="btn-flt"><i class="material-icons left">import_contacts</i>About</a></li>
-          <li><a onclick="Materialize.toast('Please Log In', 4000)" class="btn-flt"><i class="material-icons left">favorite_border</i>My Medications</a></li>
-          <li><a onclick="Materialize.toast('Please Log In', 4000)" class="btn-flt"><i class="material-icons left">healing</i>My Pharmacy</a></li>
-          <li><a onclick="Materialize.toast('Please Log In', 4000)" class="btn-flt"><i class="material-icons left">call</i>Need Assistance?</a></li>
-          <li><a href="index.html"><i class="material-icons left">person</i>Log In</a></li>
+        <a onClick="myMedicineList.hideAllButMe('home-page')" class="brand-logo"><img id="logo" src="img/perscriptive_logo.png" alt="Perscriptive Logo Image"></a>
+        <a onClick="myMedicineList.hideAllButMe('home-page')" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down hidden-item" id="hidden-nav">
+          <li id="home-page-nav"><a onClick="myMedicineList.hideAllButMe('home-page')" class="btn-flt"><i class="material-icons left">home</i>Home</a></li>
+          <li id="about-page-nav"><a onClick="myMedicineList.hideAllButMe('about-page')" class="btn-flt"><i class="material-icons left">import_contacts</i>About</a></li>
+          <li id="my-medication-nav"><a onClick="myMedicineList.hideAllButMe('my-medication')" class="btn-flt"><i class="material-icons left">favorite_border</i>My Medications</a></li>
+		  <li id="my-pharmacy-nav"><a onClick="myMedicineList.hideAllButMe('my-pharmacy')" class="btn-flt"><i class="material-icons left">healing</i>My Pharmacy</a></li>
+		  <li id="notification-page-nav"><a onClick="myMedicineList.hideAllButMe('notification-page')" class="btn-flt"><i class="material-icons left">healing</i>Notifications</a></li>
+          <li id="need-assistance-nav"><a onClick="myMedicineList.hideAllButMe('need-assistance')" class="btn-flt"><i class="material-icons left">call</i>Need Assistance?</a></li>
+          <li ><a href="index.html"><i class="material-icons left">person</i>Log Out</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-          <li class = "active"><a onclick="Materialize.toast('Please Log In', 4000)" class="btn-flt"><i class="material-icons left">home</i>Home</a></li>
-          <li><a onclick="Materialize.toast('Please Log In', 4000)" class="btn-flt"><i class="material-icons left">import_contacts</i>About</a></li>
-          <li><a onclick="Materialize.toast('Please Log In', 4000)" class="btn-flt"><i class="material-icons left">favorite_border</i>My Medications</a></li>
-          <li><a onclick="Materialize.toast('Please Log In', 4000)" class="btn-flt"><i class="material-icons left">healing</i>My Pharmacy</a></li>
-          <li><a onclick="Materialize.toast('Please Log In', 4000)" class="btn-flt"><i class="material-icons left">call</i>Need Assistance?</a></li>
-          <li><a href="index.html"><i class="material-icons left">person</i>Log In</a></li>
+          <li id="home-page-nav"><a onClick="myMedicineList.hideAllButMe('home-page')" class="btn-flt"><i class="material-icons left">home</i>Home</a></li>
+          <li id="about-page-nav"><a onClick="myMedicineList.hideAllButMe('about-page')" class="btn-flt"><i class="material-icons left">import_contacts</i>About</a></li>
+          <li id="my-medication-nav"><a onClick="myMedicineList.hideAllButMe('my-medication')" class="btn-flt"><i class="material-icons left">favorite_border</i>My Medications</a></li>
+		  <li id="my-pharmacy-nav"><a onClick="myMedicineList.hideAllButMe('my-pharmacy')" class="btn-flt"><i class="material-icons left">healing</i>My Pharmacy</a></li>
+		  <li id="notification-page-nav"><a onClick="myMedicineList.hideAllButMe('notification-page')" class="btn-flt"><i class="material-icons left">healing</i>Notifications</a></li>
+          <li id="need-assistance-nav"><a onClick="myMedicineList.hideAllButMe('need-assistance')" class="btn-flt"><i class="material-icons left">call</i>Need Assistance?</a></li>
+          <li id=""><a onClick="myMedicineList.hideAllButMe('login')"><i class="material-icons left">person</i>Log out</a></li>
         </ul>
       </div>
     </nav>
 
-    <main>
+
+		<div class="fixed-action-btn">
+			<a class="btn-floating btn-large pulse">
+				<i class="large material-icons" id="biggerButton">format_size</i>
+			</a>
+		</div>
+
+      <!-- LOGIN FORM -->
+		<div id="login">
+			<div class="center">
+			  <img class="responsive-img" style="width:12rem;" src="img/perscriptive_logo.png" />
+
+			  <div class="container">
+				<div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+		
+				  <form class="col s12" method="post">
+					<div class='row'>
+					  <div class='col s12'>
+					  </div>
+					</div>
+		
+					<div class='row'>
+					  <div class='input-field col s12'>
+						<input class='validate' type='email' name='email' id='email' />
+						<label for='email' class="font-change">Enter your email</label>
+					  </div>
+					</div>
+		
+					<div class='row'>
+					  <div class='input-field col s12'>
+						<input class='validate' type='password' name='password' id='password' />
+						<label for='password' class="font-change">Enter your password</label>
+					  </div>
+					  <label style='float: left; margin-left: 0.9rem;'>
+						<a class='pink-text font-change' href='home.html'><b>Forgot Password?</b></a>
+					  </label>
+					</div>
+		
+
+					<div class="center">
+					  <div class='row'>
+						<a id="blue" name='btn_login' class='col s12 btn btn-large waves-effect font-change' onClick="myMedicineList.hideAllButMe('home-page')">Login</a>
+					  </div>
+					</div>
+				  </form>
+				</div>
+			  </div>
+			  <a onClick="myMedicineList.hideAllButMe('home-page')" id="dark-green" class='col s12 btn btn-small waves-effect text-grey darken-3 font-change'>Create Account</a>
+			</div>
+		</div>
+	
+    <!-- Home -->	
+		<div id="home-page" >
+		  <!-- CARDS -->
+		  <div id="main-card">
+			<div class="card-panel">
+			  <div class="row">
+				  <h5 class="col s8 grey-text text-darken-3">Repeat Due 20 May</h5>
+				  <h5 class="col s4 right-align grey-text text-darken-3">15 Days Remaining</h5>
+			  </div>
+			  <div class="progress">
+				  <div class="determinate" style="width: 60%"></div>
+			  </div>
+		    </div>
+		  </div>        
+
+			<div class="flexbox">
+			<div class="card">
+			  <div class="card-image waves-effect waves-block waves-light">
+				<img class="activator" src="img/Photo by Simone van der Koelen on Unsplash.jpg">
+			  </div>
+			  <div class="card-content">
+				<span class="card-title activator grey-text text-darken-4">My Medications<i class="material-icons right">more_vert</i></span>
+				<p><a href="medication.html">Explore</a></p>
+			  </div>
+			  <div class="card-reveal">
+				<span class="card-title grey-text text-darken-4">Keep Up To Date<i class="material-icons right">close</i></span>
+				<p>Here is the information we have on your currently perscribed medications. For more descriptive information, please see your doctor or other health professional.</p>
+			  </div>
+			</div>
+
+			<div class="card">
+			  <div class="card-image waves-effect waves-block waves-light">
+				<img class="card-image" class="activator" src="img/Photo by Nathaniel Yeo on Unsplash.jpg">
+			  </div>
+			  <div class="card-content">
+				<span class="card-title activator grey-text text-darken-4">My Pharmacy<i class="material-icons right">more_vert</i></span>
+				<p><a href="pharmacy.html">Explore</a></p>
+			  </div>
+			  <div class="card-reveal">
+				<span class="card-title grey-text text-darken-4">News<i class="material-icons right">close</i></span>
+				<p>Here is some more information about changes to your pharmacy.</p>
+			  </div>
+			</div>
+		  
+
+			<div class="card">
+			  <div class="card-image waves-effect waves-block waves-light">
+				<img class="activator" src="img/Photo by Mark Fletcher-Brown on Unsplash.jpg">
+			  </div>
+			  <div class="card-content">
+				<span class="card-title activator grey-text text-darken-4">Need Assistance?<i class="material-icons right">more_vert</i></span>
+				<p><a href="assist.html">Explore</a></p>
+			  </div>
+			  <div class="card-reveal">
+				<span class="card-title grey-text text-darken-4">Questions?<i class="material-icons right">close</i></span>
+				<p>Try the links on our Assistance page. If you're having an emergency, call 111 for immediate aid.</p>
+			  </div>
+			  </div>
+			</div>
+		</div>
+
+	
+    <!-- About -->	
+		<div id="about-page" >
+		  <div class="fixed-action-btn">
+			<a class="btn-floating btn-large pulse">
+			  <i class="large material-icons" id="biggerButton">format_size</i>
+			</a>
+		  </div>
+
+		  <div class="flexbox">
+			<div class="card">
+			  <div class="card-content">
+				<span class="card-title activator grey-text text-darken-4">Perscriptive<i class="material-icons right">more_vert</i></span>
+			  </div>
+			  <div class="card-reveal">
+				<span class="card-title grey-text text-darken-4">Keep Up To Date<i class="material-icons right">close</i></span>
+				<p>Here is the information we have on your currently perscribed medications. For more descriptive information, please see your doctor or other health professional.</p>
+			  </div>
+			</div>
+
+
+			<div class="card">
+			  <div class="card-image waves-effect waves-block waves-light">
+				<img class="activator" src="img/Photo by Simone van der Koelen on Unsplash.jpg">
+			  </div>
+			  <div class="card-content">
+				<span class="card-title activator grey-text text-darken-4">Chris Condon<i class="material-icons right">more_vert</i></span>
+				<p><a href="https://www.linkedin.com/in/xhros/">LinkedIn</a></p>
+			  </div>
+			  <div class="card-reveal">
+				<span class="card-title grey-text text-darken-4">Chris Condon<i class="material-icons right">close</i></span>
+				<p>Check out his linkedIn.</p>
+			  </div>
+			</div>
+
+			<div class="card">
+			  <div class="card-image waves-effect waves-block waves-light">
+				<img class="card-image" class="activator" src="img/Photo by Nathaniel Yeo on Unsplash.jpg">
+			  </div>
+			  <div class="card-content">
+				<span class="card-title activator grey-text text-darken-4">Farran Ram<i class="material-icons right">more_vert</i></span>
+				<p><a href="https://www.linkedin.com/in/farran-monique-ram/">LinkedIn</a></p>
+				<p><a href="https://github.com/farran94">Github</a></p>
+			  </div>
+			  <div class="card-reveal">
+				<span class="card-title grey-text text-darken-4">Farran Ram<i class="material-icons right">close</i></span>
+				<p>Team Leader and Front-End Dev
+				<br><br>Current student of the Programming Pathway in the Graduate Diploma in Information and Communication Technologies. 
+				Previously a merited Medical Receptionist and Customer Care Specialist with a Bachelors of Health Sciences. </p>
+			  </div>
+			</div>
+		  
+
+			<div class="card">
+			  <div class="card-image waves-effect waves-block waves-light">
+				<img class="activator" src="img/Photo by Mark Fletcher-Brown on Unsplash.jpg">
+			  </div>
+			  <div class="card-content">
+				<span class="card-title activator grey-text text-darken-4">Hamish Brookes - Lockie<i class="material-icons right">more_vert</i></span>
+				<p><a href="https://www.linkedin.com/in/hamish-brookes-lockie-4699221aa/">LinkedIn</a></p>
+			  </div>
+			  <div class="card-reveal">
+				<span class="card-title grey-text text-darken-4">Questions?<i class="material-icons right">close</i></span>
+				<p>Try the links on our Assistance page. If you're having an emergency, call 111 for immediate aid.</p>
+			  </div>
+			  </div>
+		  </div>
+	</div>
+	
+
+    <!-- My Medications -->
+		<div id="my-medication" >
+		  <div class="fixed-action-btn">
+			<a class="btn-floating btn-large pulse">
+			  <i class="large material-icons" id="biggerButton">format_size</i>
+			</a>
+		  </div>
+
+		  <div id="med-buttons">
+			<a id="dark-green" data-position="top" data-tooltip="Add" class="btn-floating btn-large waves-effect waves-light tooltipped"><i class="material-icons">add</i></a>
+			<a id="light-green" data-position="top" data-tooltip="Remove" class="btn-floating btn-large waves-effect waves-light tooltipped"><i class="material-icons">remove</i></a>
+			<a id="yellow-green" data-position="top" data-tooltip="Lock list" class="btn-floating btn-large waves-effect waves-light tooltipped"><i class="material-icons">lock_outline</i></a>
+			<a id="yellow" data-position="top" data-tooltip="Unlock list" class="btn-floating btn-large waves-effect waves-light tooltipped"><i class="material-icons">lock_open</i></a>
+			<a id="blue" data-position="top" data-tooltip="Change Order" class="btn-floating btn-large waves-effect waves-light tooltipped"><i class="material-icons">low_priority</i></a>
+			<a id="dark-green" data-position="top" data-tooltip="Edit" class="btn-floating btn-large waves-effect waves-light btn modal-trigger tooltipped" href="#modal-edit"><i class="material-icons">mode_edit</i></a>
+		</div>
+
+		<!-- COLLAPSIBLE -->
+		<ul class="collapsible popout">
+		  <li>
+			<div class="collapsible-header"><i class="material-icons">zoom_in</i>Losec</div>
+			<div class="collapsible-body"><span>Take 20mg (1 TABLET) daily with water<br>No solids 20 minutes afterwards</span></div>
+		  </li>
+		  <li>
+			<div class="collapsible-header"><i class="material-icons">star_border</i>Lorstat</div>
+			<div class="collapsible-body"><span>Important<br>For cholesterol levels<br>Take 40mg (1 TABLET) daily with water<br>No solids 20 minutes afterwards</span></div>
+		  </li>
+		  <li>
+			<div class="collapsible-header"><i class="material-icons">zoom_in</i>Panadol</div>
+			<div class="collapsible-body"><span>Take when needed</span></div>
+		  </li>
+		  <li>
+			<div class="collapsible-header"><i class="material-icons">zoom_in</i>Zopiclone</div>
+			<div class="collapsible-body"><span>Take when needed for sleep assistance</span></div>
+		  </li>
+		  <li>
+			<div class="collapsible-header"><i class="material-icons">timelapse</i>Augmentin</div>
+			<div class="collapsible-body"><span>Take before bed<br>Two weeks duration antibiotic<br>3 days remaining</span></div>
+		  </li>
+		</ul>
+
+		  <!-- MODAL -->
+		  <div id="modal-edit" class="modal modal-fixed-footer">
+			<div class="modal-content">
+			  <h4>Edit Medications</h4>
+			  <p>What medication do you wish to edit?</p>
+			</div>
+			<div class="modal-footer">
+			  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+				<i class="material-icons right">send</i>
+			  </button>
+			  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Discard</a>
+			</div>
+		  </div>
+		</div>
+
+
+    <!-- My Pharmacy -->
+	<div id="my-pharmacy" >
+		  <div class="fixed-action-btn">
+			<a class="btn-floating btn-large pulse">
+			  <i class="large material-icons" id="biggerButton">format_size</i>
+			</a>
+		  </div>
+
+		  <div class="flexbox">
+			<div class="card large">
+			  <div class="card-image waves-effect waves-block waves-light">
+				<img class="activator" src="img/Photo by Nathaniel Yeo on Unsplash.jpg">
+			  </div>
+			  <div class="card-content">
+				<span class="card-title activator grey-text text-darken-4">Pharmacy Xtra</span>
+				<p><b>PHONE </b>....................................................(03) 377 3773</p>
+				<p><b>FAX </b>..........................................................(03) 377 3774</p>
+				<p><b>HEALTHLINK EDI </b>.............................................ph4yxtra</p>
+				<p><a href="https://www.healthpoint.co.nz/pharmacy/pharmacy/pharmacy-xtra/">Visit Website</a></p>
+			  </div>
+			</div>
+					
+
+		  <ul class="collection">
+			<li class="collection-item avatar">
+			  <img src="img/perscriptive_logo.png" class="circle">
+			  <span class="title">Email Details</span>
+			  <p>pharmacyxtrachch@gmail.com</p>
+			  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+			</li>
+			<li class="collection-item avatar">
+			  <img src="img/perscriptive_logo.png" class="circle">
+			  <span class="title">Perscription Email</span>
+			  <p>pharmacyxtrace@gmail.com</p>
+			  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+			</li>
+			<li class="collection-item avatar grey">
+			  <i class="material-icons circle teal">folder</i>
+			  <span class="title">Updates</span>
+			  <p>No New Updates</p>
+			  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+			</li>
+			<li class="collection-item avatar green">
+			  <i class="material-icons circle teal">insert_chart</i>
+			  <span class="title">Backlogs</span>
+			  <p>No current backlogs</p>
+			  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+			</li>
+			<li class="collection-item avatar green">
+			  <i class="material-icons circle teal">insert_chart</i>
+			  <span class="title">Backlogs</span>
+			  <p>No current backlogs</p>
+			  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+			</li>
+		  </ul>
+		</div>
+    </div>
+
+
+
+    <!-- Need Assistance -->
+    <div id="need-assistance" >
       <div class="fixed-action-btn">
         <a class="btn-floating btn-large pulse">
-          <i class="large material-icons">format_size</i>
+          <i class="large material-icons" id="biggerButton">format_size</i>
         </a>
       </div>
 
-      <!-- LOGIN FORM -->
-      <div class="section"></div>
-      <main>
-        <div class="center">
-          <img class="responsive-img" style="width:12rem;" src="img/perscriptive_logo.png" />
-
-          <div class="container">
-            <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
-    
-              <form class="col s12" method="post">
-                <div class='row'>
-                  <div class='col s12'>
-                  </div>
-                </div>
-    
-                <div class='row'>
-                  <div class='input-field col s12'>
-                    <input class='validate' type='email' name='email' id='email' />
-                    <label for='email'>Enter your email</label>
-                  </div>
-                </div>
-    
-                <div class='row'>
-                  <div class='input-field col s12'>
-                    <input class='validate' type='password' name='password' id='password' />
-                    <label for='password'>Enter your password</label>
-                  </div>
-                  <label style='float: left; margin-left: 0.9rem;'>
-                    <a class='pink-text' href='home.html'><b>Forgot Password?</b></a>
-                  </label>
-                </div>
-    
-
-                <div class="center">
-                  <div class='row'>
-                    <a href='home.html' id="blue" name='btn_login' class='col s12 btn btn-large waves-effect'>Login</a>
-                  </div>
-                </div>
-              </form>
-            </div>
+      <!-- CARDS -->
+      <div id="assistance-cards" class="flexbox">
+        <div class="card red accent-4">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="img/Photo by Jason Leung on Unsplash.jpg">
           </div>
-          <a href='home.html' id="dark-green" class='col s12 btn btn-small waves-effect text-grey darken-3'>Create Account</a>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">EMERGENCY?<i class="material-icons right">more_vert</i></span>
+            <p><i class="material-icons left icon-white">call</i><a class ="white-text bold">CALL 111</a></p>
+          </div>
+          <div class="card-reveal red accent-4 white-text">
+            <span class="card-title white-text">Require urgent care?<i class="material-icons right">close</i></span>
+            <p>Call 111 for an ambulance.</p>
+          </div>
         </div>
-    
-        <div class="section"></div>
-        <div class="section"></div>
-    </main>
 
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="img/Photo by Nathaniel Yeo on Unsplash.jpg">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Pharmacy Xtra<i class="material-icons right">more_vert</i></span>
+            <i class="material-icons left">call</i><i>Call (03) 377 3773</i><br>
+            <p><a href="pharmacy.html">My Pharmacy</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">My Pharmacy<i class="material-icons right">close</i></span>
+            <p>Pharmacy Xtra is currently registered as your primary pharmacy. <br><br>For more details, visit the 'My Pharmacy' page.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="img/Photo by National Cancer Institute on Unsplash.jpg">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Ara Health Center<i class="material-icons right">more_vert</i></span>
+            <i class="material-icons left">call</i><i>Call (03) 940 7566</i><br>
+            <p><a href="https://www.ara.ac.nz/services-and-support/health-and-wellbeing/health-centre">Visit Website</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Ara Health Center<i class="material-icons right">close</i></span>
+            <p>Pharmacy Xtra is currently registered as your primary pharmacy. <br><br>For more details, visit their webpage or call reception at (03)940 7566.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="img/healthline.jpg">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Healthline<i class="material-icons right">more_vert</i></span>
+            <i class="material-icons left">call</i><i>Free call 0800 611 116</i>
+            <p><a href="https://www.health.govt.nz/your-health/services-and-support/health-care-services/healthline">Visit Website</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Healthline<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="img/Photo by analuisa gamboa on Unsplash.jpg">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Poisons Hotline<i class="material-icons right">more_vert</i></span>
+            <i class="material-icons left">call</i><i>Free call 0800 764 766</i>
+            <p><a href="https://poisons.co.nz/contact/">Visit Website</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Poisons Hotline<i class="material-icons right">close</i></span>
+            <p>If you have experienced an actual poisoning, please DO NOT use their form. Contact them directly on 0800 POISON</p>
+          </div>
+        </div> 
+      </div>
+
+      <div id="assistance-cards" class="flexbox">
+        <div class="card amber accent-3">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="img/covid-19-nz.jpg">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Unite against COVID-19<i class="material-icons right">more_vert</i></span>
+            <i class="material-icons left">call</i><i><a class ="black-text bold">Free call 0800 358 5453</a></i>
+            <p><a class="black-text" href="https://covid19.govt.nz/">Visit Website</a></p>
+          </div>
+          <div class="card-reveal amber accent-3 white-text">
+            <span class="card-title black-text">Concerns about COVID-19?<i class="material-icons right">close</i></span>
+            <p class="black-text">Check out the website or call the dedicated healthline number.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="img/Photo by CDC on Unsplash.jpg">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">SeniorLine<i class="material-icons right">more_vert</i></span>
+            <i class="material-icons left">call</i><i>Free call 0800 725 463</i><br>
+            <p><a href="https://www.seniorline.org.nz/#">Visit Website</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">SeniorLine<i class="material-icons right">close</i></span>
+            <p>Seniorline is a national information service to help older people and their whanau navigate the health system.<br>
+              <br>Seniorline provides information to assist older people to make decisions about staying at home, support for carers and residential care.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="img/Photo by Priscilla Du Preez on Unsplash.jpg">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Youthline<i class="material-icons right">more_vert</i></span>
+            <i class="material-icons left">call</i><i>Free call 0800 376 633</i><br>
+            <p><a href="https://www.youthline.co.nz/">Visit Website</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Youthline<i class="material-icons right">close</i></span>
+            <p>We're here to help, and are here for you. Feel free to send us a text on 234.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="img/Photo by Sasha Freemind on Unsplash.jpg">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Feeling down?<i class="material-icons right">more_vert</i></span>
+            <i class="material-icons left">call</i><i>Free call 0800 111 757</i>
+            <p><a href="https://depression.org.nz/">Visit Website</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Feeling down?<i class="material-icons right">close</i></span>
+            <p>We all face challenges to our mental wellbeing but there is a way through.<br><br> Contact us now to get help.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="img/jordan-work-tile.jpg">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Quitline<i class="material-icons right">more_vert</i></span>
+            <i class="material-icons left">call</i><i>Call 0800 778 778</i>
+            <p><a href="https://quit.org.nz/">Visit Website</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Quitline<i class="material-icons right">close</i></span>
+            <p>Quitting smoking is one of the best decisions you’ll ever make. If you’re ready to quit smoking, we’re ready to help.</p>
+          </div>
+        </div> 
+      </div>
+
+	</div>
+		<!-- Notifications page -->
+		<div id="notification-page">
+			<div class="fixed-action-btn">
+				<a class="btn-floating btn-large pulse">
+				  <i class="large material-icons">format_size</i>
+				</a>
+			  </div>
+			  
+			  <div id="checks">
+				<h2 class="grey-text">Notifications</h2>
+				<div id="border">
+					<p>
+						<input type="checkbox" id="test" />
+						<label class ="black-text" for="test">Recieve on Mobile</label>
+					</p>
+					<p>
+						<input type="checkbox" id="test1" />
+						<label class ="black-text" for="test1">Recieve on Desktop</label>
+					</p>  
+					<p>
+						<input type="checkbox" id="test2" />
+						<label class ="black-text" for="test2">Recieve Email</label>
+					</p>  
+					<p>
+						<input type="checkbox" id="test3" />
+						<label class ="black-text" for="test3">Recieve Mobile Call</label>
+					</p> 
+					<div class="row">
+						<div class="col s12 m6">
+						  <div class="card light-blue lighten-5">
+							<div class="card-content">
+							  <span class="card-title">Reminder</span>
+							  <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">error_outline</i></a>
+							  <p>You will recieve an alert in 10 days</p>
+							</div>
+						  </div>
+						</div>
+						<div class="col s12 m6"></div>
+					  </div>
+				</div>
+				<br>
+				<h5 class="grey-text">I am registered as:</h5>
+				<div id="border">
+						<input id="choice_1" name="group1" type="radio" checked/>   
+						<label class ="black-text" for="choice_1">Individual</label>
+						<br>
+						<input id="choice_2" name="group1" type="radio" />  
+						<label class ="black-text" for="choice_2">Partner/Spouse</label>
+						<br>
+						<input id="choice_3" name="group1" type="radio" />  
+						<label class ="black-text" for="choice_3">Family Member</label>
+						<br>
+						<input id="choice_4" name="group1" type="radio" />  
+						<label class ="black-text" for="choice_4">Friend</label>
+						<br>
+						<input id="choice_5" name="group1" type="radio" />  
+						<label class ="black-text" for="choice_5">Other</label>
+						<div class="row">
+							<div class="col s12">
+							  <div class="row">
+								<div class="input-field col s12">
+								  <i class="material-icons prefix">textsms</i>
+								  <input type="text" id="autocomplete-input" class="autocomplete">
+								  <label for="autocomplete-input">Please Specify...</label>
+								</div>
+							  </div>
+							</div>
+						  </div>
+					</div>
+			  </div> 
+		</div>
+    </main>	
+	
     <!-- STICKY FOOTER -->
     <footer class="page-footer">
       <div class="container">
@@ -117,11 +599,12 @@
       </div>
     </footer>
 
-      <!--Import jQuery before materialize.js-->
+      <!-- Importing on JS files -->
+	  <script src="js/materialize.js"></script>
+	  <script src="js/main.js"></script>
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
       <script src="https://staticcdn.co.nz/embed/embed.js"></script>
-
     </body>
   </html>
         
